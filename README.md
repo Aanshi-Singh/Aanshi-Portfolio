@@ -50,6 +50,70 @@ npm run build
 
 Visit the live portfolio at: [Your Portfolio URL]
 
+## 🔗 Custom Domain Setup
+
+This project includes configuration files for easy deployment and custom domain setup on popular platforms.
+
+### Vercel Deployment
+
+1. **Deploy to Vercel:**
+   ```bash
+   npm install -g vercel
+   vercel
+   ```
+
+2. **Add Custom Domain:**
+   - Go to your project dashboard on Vercel
+   - Navigate to **Settings** → **Domains**
+   - Click **Add Domain** and enter your custom domain
+   - Follow the DNS configuration instructions:
+     - **For apex domain (example.com):** Add an A record pointing to Vercel's IP
+     - **For subdomain (www.example.com):** Add a CNAME record pointing to `cname.vercel-dns.com`
+   - Vercel will automatically configure SSL certificates
+
+### Netlify Deployment
+
+1. **Deploy to Netlify:**
+   ```bash
+   npm install -g netlify-cli
+   netlify deploy --prod
+   ```
+
+2. **Add Custom Domain:**
+   - Go to your site dashboard on Netlify
+   - Navigate to **Site settings** → **Domain management**
+   - Click **Add custom domain**
+   - Configure DNS records:
+     - **For apex domain:** Add an A record or ALIAS record
+     - **For subdomain:** Add a CNAME record pointing to your Netlify site
+   - Netlify will automatically provision SSL certificates via Let's Encrypt
+
+### GitHub Pages
+
+1. **Build and Deploy:**
+   ```bash
+   npm run build
+   # Deploy the dist folder to gh-pages branch
+   ```
+
+2. **Add Custom Domain:**
+   - Create a `CNAME` file in the `public` folder with your domain name
+   - Configure DNS records with your domain provider:
+     - Add a CNAME record pointing to `[username].github.io`
+   - Enable custom domain in GitHub Pages settings
+
+### General DNS Configuration
+
+For any hosting platform, you'll typically need:
+
+- **A Record** (for apex domain): Points to the hosting platform's IP address
+- **CNAME Record** (for subdomain): Points to the hosting platform's domain
+- **Wait for DNS propagation** (can take up to 48 hours, usually much faster)
+
+### SSL Certificate
+
+Most modern hosting platforms (Vercel, Netlify, Cloudflare Pages) automatically provision SSL certificates for custom domains. No additional configuration needed!
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
