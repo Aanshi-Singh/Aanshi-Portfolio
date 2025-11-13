@@ -1,0 +1,108 @@
+.awards-section {
+  padding: 5rem 2rem;
+  background: #ffffff;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.awards-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.awards-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.award-item {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-50px);
+  border: 2px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+}
+
+.award-item::before {
+  content: '🏆';
+  position: absolute;
+  right: 2rem;
+  font-size: 4rem;
+  opacity: 0.1;
+}
+
+.award-item.animate-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.award-item:hover {
+  transform: translateX(10px) scale(1.02);
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.15);
+  border-color: #3b82f6;
+}
+
+.award-year {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #1a202c;
+  min-width: 100px;
+  text-align: center;
+  background: #e0e7ff;
+  padding: 1rem;
+  border-radius: 15px;
+  border: 2px solid #c7d2fe;
+}
+
+.award-content {
+  flex: 1;
+  color: #1a202c;
+}
+
+.award-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #1a202c;
+}
+
+.award-prize {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  display: inline-block;
+  margin-top: 0.5rem;
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+@media (max-width: 768px) {
+  .award-item {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .award-year {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .award-title {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,120 @@
+.education-section {
+  padding: 5rem 2rem;
+  background: #ffffff;
+  min-height: 100vh;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-out;
+}
+
+.education-section.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.education-section .section-title {
+  color: #1a202c;
+  text-decoration-color: #3b82f6;
+}
+
+.education-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.education-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 2.5rem;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #3b82f6 0%, #8b5cf6 100%);
+  transition: width 0.3s ease;
+}
+
+.education-card:hover {
+  background: white;
+  transform: translateX(10px);
+  border-color: #3b82f6;
+  box-shadow: 0 8px 30px rgba(59, 130, 246, 0.1);
+}
+
+.degree {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+  color: #1a202c;
+}
+
+.specialization {
+  font-size: 1.1rem;
+  color: #64748b;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+}
+
+.institution {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #3b82f6;
+  position: relative;
+  z-index: 1;
+}
+
+.education-meta {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.grade {
+  font-size: 1.1rem;
+  font-weight: 700;
+  background: #e0e7ff;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #c7d2fe;
+  color: #3b82f6;
+}
+
+.period {
+  font-size: 1rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .education-card {
+    padding: 1.5rem;
+  }
+  
+  .degree {
+    font-size: 1.4rem;
+  }
+  
+  .institution {
+    font-size: 1.1rem;
+  }
+}
